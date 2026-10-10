@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude RC Enabler</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="title">
+    <h1>Claude RC Enabler</h1>
+    <p id="summary">Scanning…</p>
+  </div>
+  <button id="enable" class="primary">Enable Remote Control now</button>
+</header>
+
+<section class="toggles">
+  <label class="switch"><input type="checkbox" id="auto"><span>Enable automatically for new sessions</span></label>
+  <label class="switch"><input type="checkbox" id="login"><span>Start with Windows</span></label>
+</section>
+
+<div id="result" class="banner" hidden></div>
+
+<main id="windows"></main>
+
+<details id="otherBox" hidden>
+  <summary id="otherSummary"></summary>
+  <p class="hint">These are not Claude Code sessions run by the VS Code extension (terminal or desktop-app sessions). They can't be switched on from outside. Type <code>/remote-control</code> in the session itself.</p>
+  <div id="others"></div>
+</details>
+
+<footer>
+  <div class="meta"><span id="setting"></span> <button id="openLog" class="link">Open activity log</button></div>
+  <pre id="log" aria-label="Activity log"></pre>
+</footer>
+<script src="renderer.js"></script>
+</body>
+</html>

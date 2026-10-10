@@ -1,0 +1,18 @@
+{
+  "name": "claude-rc-enabler",
+  "productName": "Claude RC Enabler",
+  "version": "1.0.0",
+  "description": "Tray app that switches on Remote Control for every Claude Code session running in your open VS Code windows.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/core.test.js",
+    "icons": "node tools/make-icons.js",
+    "package": "node tools/make-icons.js && electron-packager . ClaudeRCEnabler --platform=win32 --arch=x64 --out=dist --overwrite --icon=build/icon.ico --prune=true --ignore=\"^/(dist|test|tools)($|/)\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^44.7.0"
+  }
+}
